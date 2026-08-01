@@ -58,13 +58,22 @@ Buka `praktik/bawaslu/` dan jawab pertanyaan berikut secara tertulis:
   folder `slot-gacor-terbaru/`?
 - `webshell.php` itu berbahaya kenapa? Jelaskan dengan kata-katamu sendiri.
 
-**8. Bikin "korban" sendiri (lab).**
-Buat website sederhana di PC kamu (misal pakai Node/Express atau file HTML statis),
-lalu coba diri sendiri:
-- Temukan endpoint/form di website itu.
-- Replikasi request-nya dengan curl.
-- Catat apa yang terjadi kalau kamu kirim input aneh (misal teks super panjang).
-Tujuannya: paham alur request-response tanpa melanggar apa pun.
+**8. [SELESAI 1 Agu 2026] Serang lab sendiri (Docker).**
+Ikuti `lab-local/README-LAB.md` dan lakukan rantai ini **dengan tangan kamu sendiri**:
+- Jalankan server lab di Docker (`localhost:8081`).
+- **Recon**: temukan pintu masuk (form upload).
+- **Upload webshell**: selundupkan kode PHP berlabel `.jpg/.png` (label tipuan,
+  isi senjata). Server yang salah setting akan mengeksekusinya.
+- **Aktifkan (RCE)**: buka file-nya + `?cmd=ls` → server menjalankan perintahmu.
+- **Buat folder judi**: `mkdir` + tulis `index.html` lewat webshell, BUKAN edit file.
+- **Lihat hasil**: buka `localhost:8081/uploads/slot-gacor-terbaru/` → halaman muncul
+  tanpa sepengetahuan pemilik.
+
+> **Pelajaran yang didapat sesi ini:**
+> - 403 Forbidden muncul saat folder kosong (tidak ada `index.html`) → Apache menolak.
+> - `<` dan `>` di shell itu redirection, BUKAN tag HTML → perintah gagal diam-diam.
+>   Solusinya: bungkus isi HTML dengan tanda kutip `'...'`.
+> - Rantai ini 100% mekanisme serangan asli (BSSN 2024), dijalankan legal di PC sendiri.
 
 ## Cara Mengecek Jawaban Sendiri
 
@@ -73,13 +82,14 @@ Tujuannya: paham alur request-response tanpa melanggar apa pun.
 - Kalau ragu, buka `05_ISTILAH.md` lalu jawab lagi.
 - Untuk latihan 4–6: jalankan command-nya, cocokkan dengan materi di `02` & `03`.
 
-## Checklist Kelulusan Level 1–2
+## Checklist Kelulusan Level 1–3
 
-- [ ] Bisa menemukan request yang menghasilkan di sebuah website.
-- [ ] Bisa membaca metode, URL, dan parameter dari request itu.
-- [ ] Bisa pakai curl untuk memanggil endpoint.
-- [ ] Bisa baca status code (200/302/404/500) dan menyimpulkan artinya.
-- [ ] Bisa menjelaskan perbedaan honeypot, captcha, dan rate limit.
+- [x] Bisa menemukan request yang menghasilkan di sebuah website.
+- [x] Bisa membaca metode, URL, dan parameter dari request itu.
+- [x] Bisa pakai curl untuk memanggil endpoint.
+- [x] Bisa baca status code (200/302/404/500) dan menyimpulkan artinya.
+- [x] Bisa menjelaskan perbedaan honeypot, captcha, dan rate limit.
+- [x] **Bisa menjelaskan rantai upload webshell → RCE → buat folder (lab sendiri).**
 
 ---
-Kalau checklist sudah semua tercentang → update `00_ROADMAP.md` langkah 4 jadi selesai.
+Kalau checklist sudah semua tercentang → update `00_ROADMAP.md` langkah 4 & 6 jadi selesai.

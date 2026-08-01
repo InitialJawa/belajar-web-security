@@ -31,10 +31,11 @@ mau pakai skill bongkar-bongkar secara legal dan bermanfaat.
 1. **[SELESAI] Paham cara kerja website** → `01` — HTTP, lapisan website.
 2. **[SELESAI konsep] Reverse engineering** → `02` — 7 langkah, DevTools, curl.
 3. **[SELESAI] Studi kasus** → `03` + `04` — bongkar tool nyata & serangan nyata.
-4. **[BELUM] Latihan mandiri** → `06` — praktik DevTools/curl di website yang kamu izinkan.
+4. **[SELESAI] Latihan mandiri** → `06` — praktik DevTools/curl di website yang kamu izinkan.
 5. **[BELUM] API internal & otomasi** — cara cek username batch (IG/TikTok/YT) via endpoint.
-6. **[BELUM] Setup lab sendiri** — bikin website "korban" di lokal (PC sendiri) untuk
-   latihan menyerang secara legal.
+6. **[SELESAI 1 Agu 2026] Setup lab sendiri** → `lab-local/` — bikin website "korban" di
+   lokal (Docker, localhost) untuk latihan menyerang secara legal. Rantai dikuasai:
+   **recon → upload webshell → RCE → buat folder judi tanpa akses normal**.
 7. **[BELUM] Bug bounty pemula** — platform seperti HackerOne/Bugcrowd, baca scope,
    lapor bug pertama.
 

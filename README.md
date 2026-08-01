@@ -41,7 +41,8 @@ Detail peta belajarnya ada di `00_ROADMAP.md`.
 | Reverse engineering 7 langkah (DevTools, curl) | ✅ Konsep sudah dibahas |
 | Studi kasus: instausername.com | ✅ Dibongkar sampai endpoint |
 | Studi kasus: situs pemerintah + judi online | ✅ Dipelajari anatominya |
-| Latihan mandiri | ⬜ Belum mulai |
+| Latihan mandiri (DevTools/curl) | ✅ Level 1–2 selesai |
+| **Lab serangan lokal (Docker)** — recon → upload webshell → RCE → bikin folder judi | ✅ **SELESAI 1 Agu 2026** |
 | Cara pakai API internal IG/TikTok (otomatis) | ⬜ Belum mulai |
 | Bug bounty (praktik nyata) | ⬜ Jauh di depan |
 
@@ -72,6 +73,7 @@ Detail peta belajarnya ada di `00_ROADMAP.md`.
 | `06_LATIHAN.md` | Latihan bertingkat + cara cek sendiri |
 | `07_ETIKA_DAN_HUKUM.md` | Garis merah (legal vs ilegal) |
 | `praktik/` | Folder simulasi "situs pemerintah yang dibobol" (untuk dipelototi) |
+| `lab-local/` | **Lab serangan langsung**: server PHP rentan di Docker, kamu menyerang sendiri |
 
 ## Urutan Baca yang Disarankan
 
@@ -81,6 +83,9 @@ Detail peta belajarnya ada di `00_ROADMAP.md`.
 4. `03_STUDI_KASUS_INSTAUSERNAME.md` → `04_STUDI_KASUS_PEMERINTAH_JUDI.md`
 5. `05_ISTILAH.md` sebagai referensi saat menemukan kata asing
 6. `06_LATIHAN.md` → `praktik/` → `07_ETIKA_DAN_HUKUM.md`
+7. **`lab-local/README-LAB.md`** — serangan langsung di server sendiri (sudah dikerjakan, bisa diulang kapan saja)
 
 ---
+
 *Modul dibuat 1 Agustus 2026. Update tiap selesai sesi belajar.*
+*Sesi 1 Agustus 2026: Lab serangan lokal (Docker) selesai — rantai recon → upload webshell → RCE → buat folder judi dikuasai.*

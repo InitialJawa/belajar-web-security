@@ -91,3 +91,8 @@ Ini **SEO black-hat**:
 **Praktik**: buka folder `praktik/` → `bawaslu/` → lihat `index.html` (situs normal),
 `slot-gacor-terbaru/index.html` (yang disisipkan), dan `uploads/webshell.php`
 ("pintu belakang"). Semua penjelasan ada di `ANATOMI.md`.
+
+**Praktik lanjutan (sudah dikerjakan 1 Agu 2026)**: `lab-local/` — server rentan di
+Docker. Di sana rantai aslinya kamu jalankan sendiri: upload webshell berlabel `.png`
+→ aktifkan → `mkdir` + tulis `index.html` lewat webshell → buka
+`localhost:8081/uploads/slot-gacor-terbaru/`. Penjelasan lengkap: `lab-local/README-LAB.md`.
