@@ -72,7 +72,9 @@ Ikuti `lab-local/README-LAB.md` dan lakukan rantai ini **dengan tangan kamu send
 > **Pelajaran yang didapat sesi ini:**
 > - 403 Forbidden muncul saat folder kosong (tidak ada `index.html`) → Apache menolak.
 > - `<` dan `>` di shell itu redirection, BUKAN tag HTML → perintah gagal diam-diam.
->   Solusinya: bungkus isi HTML dengan tanda kutip `'...'`.
+>   Solusinya: bungkus isi HTML dengan tanda kutip `'...'`, atau pakai base64.
+> - Penyerang tidak mengetik perintah manual di URL — mereka pakai tool. Coba
+>   `lab-local/kontroler-webshell.py` (perintah `write` & `upload` memakai base64).
 > - Rantai ini 100% mekanisme serangan asli (BSSN 2024), dijalankan legal di PC sendiri.
 
 ## Cara Mengecek Jawaban Sendiri

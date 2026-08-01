@@ -51,6 +51,33 @@ docker rm lab-badan-publik
 docker rmi lab-badan-publik
 ```
 
+## Kontroler Webshell (tool)
+
+Setelah webshell aktif, kamu bisa mengendalikannya lewat script — persis cara
+penyerang (mereka tidak mengetik perintah satu-satu di URL, tapi pakai tool):
+
+```powershell
+python kontroler-webshell.py --url "http://localhost:8081/uploads/<file-webshell-mu>"
+```
+
+Contoh sesi:
+```
+shell> ping              # cek webshell aktif
+shell> ls                # daftar file di folder server
+shell> pwd               # folder server aktif
+shell> mkdir judi        # buat folder (RCE)
+shell> write judi/index.html <h1>SLOT</h1>   # tulis file HTML, aman dari < > &
+shell> upload poster.txt # kirim file dari PC-mu ke server
+```
+
+**Kenapa pakai base64?** Isi file bisa mengandung karakter yang bikin shell bingung
+(`<`, `>`, `&`, spasi, kutip). Base64 mengubah semuanya jadi huruf-angka aman,
+lalu server meng-decodenya kembali. Ini juga solusi dari masalah 403 yang kamu
+temui saat menulis HTML manual di URL.
+
+Setiap perintah tercatat di `session.log` (seperti log server — penyerang dan
+forensik dua-duanya memakai log seperti ini).
+
 ## File
 
 | File | Peran |
@@ -59,5 +86,6 @@ docker rmi lab-badan-publik
 | `upload.php` | "Pintu masuk" yang rapuh — cek ekstensi doang, isi file tidak diperiksa |
 | `shell.php` | Web shell (pintu belakang) — dipakai setelah berhasil di-upload |
 | `senjata-webshell.png` | Contoh "senjata": isi PHP berlabel `.png` — persis yang di-upload ke server |
+| `kontroler-webshell.py` | Tool pengendali webshell (perintah + write + upload via base64) |
 | `uploads/` | Tempat file ter-upload (folder inilah yang "disusupi") |
 | `Dockerfile` | Setup PHP 8.3 + Apache, termasuk "salah setting" AddType |
